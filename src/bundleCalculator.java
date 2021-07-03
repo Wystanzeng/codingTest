@@ -3,44 +3,28 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.*;
 
+/**
+ * for the bundle calculation
+ */
 public class bundleCalculator {
 
-    public static void main(String[] args) throws IOException {
-        // create price for image
-        TreeMap<Integer, Double> imageBundles = new TreeMap<>();
-        imageBundles.put(5, 450.00);
-        imageBundles.put(10, 800.00);
-        // create price for audio
-        TreeMap<Integer, Double> audioBundles = new TreeMap<>();
-        audioBundles.put(3, 427.50);
-        audioBundles.put(6, 810.00);
-        audioBundles.put(9, 1147.50);
-        // create price for video
-        TreeMap<Integer, Double> videoBundles = new TreeMap<>();
-        videoBundles.put(3, 570.00);
-        videoBundles.put(5, 900.00);
-        videoBundles.put(9, 1530.00);
-        // create format list
-        Map<String, TreeMap> formatBundleList = new HashMap<>();
-        formatBundleList.put("IMG", imageBundles);
-        formatBundleList.put("FLAC", audioBundles);
-        formatBundleList.put("VID", videoBundles);
-
-        // start to read the input file
-        FileReader input = new FileReader("inputFile/testInput");
-        BufferedReader bufferedReader = new BufferedReader(input);
-        String line;
-        while ((line = bufferedReader.readLine()) != null) {
-            String[] informations = line.split(" ");
-            Integer quantity = Integer.parseInt(informations[0]);
-            priceCalculator(quantity, informations[1], formatBundleList);
-        }
-    }
-
+    /**
+     * calculate the bundle number and price, then printout the total price
+     * and detail
+     *
+     * example:
+     * 14 IMG 1250.00
+     * 1 x 10 800.0
+     * 1 x 5 450.0
+     *
+     * @param quantity interger presents
+     * @param format string presents the code of the format
+     * @param formatBundleList map stores the bundle information of all format
+     */
     public static void priceCalculator(Integer quantity, String format,
-                                       Map<String, TreeMap> formatBundleList) {
+                                       Map<String, formatBundle> formatBundleList) {
         // creat the bundles price with given formate code
-        TreeMap bundlesPrice = formatBundleList.get(format);
+        TreeMap bundlesPrice = formatBundleList.get(format).getBundles();
         // creat array for bundles
         ArrayList<Integer> bundles = new ArrayList(bundlesPrice.keySet());
         // set the total price
@@ -79,5 +63,4 @@ public class bundleCalculator {
                     + bundlesPrice.get(bundle));
         }
     }
-
 }

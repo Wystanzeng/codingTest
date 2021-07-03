@@ -36,7 +36,11 @@ No installation requirement
     ├── Input                   # the input file for the program
     │   ├── testInput           # txt file for input
     ├── src                     # Source files
-    │   ├── budleCalculator     # the main program
+    │   ├── bundleCalculator            # the bundle calcution
+    │   ├── calculationInitializer      # the initializer for the calcuation
+    │   ├── formatBundle                # the format detail
+    │   ├── formatBundleList            # the format list
+    │   ├── Launcher                    # the main program
     └── README.md
 
 # Usage
