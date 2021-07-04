@@ -8,13 +8,13 @@ import java.io.IOException;
 public class CalculationInitializer {
 
     // file path
-    String filePath;
+    private String filePath;
 
     // format bundle list for the company
-    FormatBundleList formatBundleList;
+    private FormatBundleList formatBundleList;
 
     // bundle calculator
-    BundleCalculator bundleCalculator;
+    private BundleCalculator bundleCalculator;
 
     public CalculationInitializer(String filePath, FormatBundleList formatBundleList) {
         this.filePath = filePath;

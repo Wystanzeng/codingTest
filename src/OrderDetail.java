@@ -6,13 +6,13 @@ import java.util.TreeSet;
  */
 public class OrderDetail {
     // the order
-    Order order;
+    private Order order;
     // format for the order
-    Double totalPrice;
+    private Double totalPrice;
     // the bundle price for the given format
-    FormatBundle formatBundle;
+    private FormatBundle formatBundle;
     // the order detail
-    HashMap<Integer, Integer> orderDetail;
+    private HashMap<Integer, Integer> orderDetail;
 
     public OrderDetail(Order order, FormatBundle formatBundle) {
         this.order = order;
@@ -65,7 +65,7 @@ public class OrderDetail {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append(String.format("%s %s %.2f", order.getQuantity(),
-                order.getQuantity(),
+                order.getFormat(),
                 totalPrice));
         for (Integer bundle: new TreeSet<>(orderDetail.keySet()).descendingSet()) {
             sb.append(System.lineSeparator() + orderDetail.get(bundle) + " x " + bundle + " "

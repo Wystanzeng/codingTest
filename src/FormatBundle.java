@@ -6,13 +6,13 @@ import java.util.TreeMap;
 public class FormatBundle {
 
     // format of submission
-    String format;
+    private String format;
 
     // code for the format
-    String code;
+    private String code;
 
     // map to store the bundle
-    TreeMap<Integer, Double> bundles;
+    private TreeMap<Integer, Double> bundles;
 
     public FormatBundle(String format, String code) {
         this.format = format;

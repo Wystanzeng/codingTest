@@ -1,9 +1,9 @@
 public class Order {
 
     // format for the order
-    String format;
+    private String format;
     // quantity for the order
-    Integer quantity;
+    private Integer quantity;
 
     public Order(String format, Integer quantity) {
         this.format = format;

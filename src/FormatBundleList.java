@@ -7,7 +7,7 @@ import java.util.Map;
 public class FormatBundleList {
 
     // map to store the bundles list
-    Map<String, FormatBundle> formatBundleList;
+    private Map<String, FormatBundle> formatBundleList;
 
     public FormatBundleList() {
         formatBundleList = new HashMap<>();
