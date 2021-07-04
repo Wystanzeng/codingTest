@@ -5,21 +5,21 @@ import java.io.IOException;
 /**
  * the calculation initializer
  */
-public class calculationInitializer {
+public class CalculationInitializer {
 
     // file path
     String filePath;
 
     // format bundle list for the company
-    formatBundleList formatBundleList;
+    FormatBundleList formatBundleList;
 
     // bundle calculator
-    bundleCalculator bundleCalculator;
+    BundleCalculator bundleCalculator;
 
-    public calculationInitializer(String filePath, formatBundleList formatBundleList) {
+    public CalculationInitializer(String filePath, FormatBundleList formatBundleList) {
         this.filePath = filePath;
         this.formatBundleList = formatBundleList;
-        this.bundleCalculator = new bundleCalculator();
+        this.bundleCalculator = new BundleCalculator();
     }
 
     public void startCalculation() throws IOException {
@@ -29,9 +29,19 @@ public class calculationInitializer {
         String line;
         while ((line = bufferedReader.readLine()) != null) {
             String[] informations = line.split(" ");
+            // quantity for the order
             Integer quantity = Integer.parseInt(informations[0]);
-            bundleCalculator.priceCalculator(quantity, informations[1],
-                    formatBundleList.getFormatBundleList());
+            // format for the order
+            String format = informations[1];
+            // bundle detail for the given format
+            FormatBundle formatBundle =
+                    formatBundleList.getFormatBundleList().get(format);
+            // creat the order
+            Order order = new Order(format, quantity);
+            // creat the orderDetail
+            OrderDetail
+                    orderDetail = new OrderDetail(order, formatBundle);
+            bundleCalculator.priceCalculator(orderDetail);
         }
     }
 }

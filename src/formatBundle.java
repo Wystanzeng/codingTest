@@ -3,7 +3,7 @@ import java.util.TreeMap;
 /**
  * the bundles for the format
  */
-public class formatBundle {
+public class FormatBundle {
 
     // format of submission
     String format;
@@ -14,7 +14,7 @@ public class formatBundle {
     // map to store the bundle
     TreeMap<Integer, Double> bundles;
 
-    public formatBundle(String format, String code) {
+    public FormatBundle(String format, String code) {
         this.format = format;
         this.code = code;
         bundles = new TreeMap<>();

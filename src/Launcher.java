@@ -7,21 +7,21 @@ public class Launcher {
 
     public static void main(String[] args) throws IOException {
         // create price for image
-        formatBundle imageBundle = new formatBundle("Image", "IMG");
+        FormatBundle imageBundle = new FormatBundle("Image", "IMG");
         imageBundle.putBundle(5, 450.00);
         imageBundle.putBundle(10, 800.00);
         // create price for audio
-        formatBundle audioBundle = new formatBundle("Audio", "FLAC");
+        FormatBundle audioBundle = new FormatBundle("Audio", "FLAC");
         audioBundle.putBundle(3, 427.50);
         audioBundle.putBundle(6, 810.00);
         audioBundle.putBundle(9, 1147.50);
         // create price for video
-        formatBundle videoBundle = new formatBundle("Video", "VID");
+        FormatBundle videoBundle = new FormatBundle("Video", "VID");
         videoBundle.putBundle(3, 570.00);
         videoBundle.putBundle(5, 900.00);
         videoBundle.putBundle(9, 1530.00);
         // create format list
-        formatBundleList formatBundleList = new formatBundleList();
+        FormatBundleList formatBundleList = new FormatBundleList();
         formatBundleList.putFormatBundle(imageBundle);
         formatBundleList.putFormatBundle(audioBundle);
         formatBundleList.putFormatBundle(videoBundle);
@@ -31,10 +31,10 @@ public class Launcher {
     }
 
     private static void start(String filePath,
-                              formatBundleList formatBundleList)
+                              FormatBundleList formatBundleList)
             throws IOException {
-        calculationInitializer calculationInitializer =
-                new calculationInitializer(filePath, formatBundleList);
+        CalculationInitializer calculationInitializer =
+                new CalculationInitializer(filePath, formatBundleList);
         calculationInitializer.startCalculation();
     }
 }

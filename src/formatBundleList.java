@@ -4,12 +4,12 @@ import java.util.Map;
 /**
  * the format list
  */
-public class formatBundleList {
+public class FormatBundleList {
 
     // map to store the bundles list
-    Map<String, formatBundle> formatBundleList;
+    Map<String, FormatBundle> formatBundleList;
 
-    public formatBundleList() {
+    public FormatBundleList() {
         formatBundleList = new HashMap<>();
     }
 
@@ -18,7 +18,7 @@ public class formatBundleList {
      *
      * @return map store the bundle information of all the format
      */
-    public Map<String, formatBundle> getFormatBundleList() {
+    public Map<String, FormatBundle> getFormatBundleList() {
         return formatBundleList;
     }
 
@@ -27,7 +27,7 @@ public class formatBundleList {
      *
      * @param formatBundle the bundle information for the format
      */
-    public void putFormatBundle(formatBundle formatBundle) {
+    public void putFormatBundle(FormatBundle formatBundle) {
         formatBundleList.put(formatBundle.getCode(), formatBundle);
     }
 }

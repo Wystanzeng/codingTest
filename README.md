@@ -1,5 +1,5 @@
 # Background
-This is a coding chanllenge. The calculator is designed to calculate the cost and bundle breakdown based on given brands order and budnles.
+This is a coding chanllenge. The calculator is designed to calculate the cost and bundle breakdown based on given brands orderDetail and budnles.
 
 Submission format | Format code | Bundles
 ----------------- | ----------- | -------
@@ -8,7 +8,7 @@ Audio | Flac | 3 @ $427.50 6 @ $810 9 @ $1147.50
 Video | VID | 3 @ $570 5 @ $900 9 @ $1530
 The following is example input and output. 
 ### Input:
-Each order has a series of lines with each line containing the number of items followed by the submission format code
+Each orderDetail has a series of lines with each line containing the number of items followed by the submission format code
 An example input:
 ```
 10 IMG
@@ -36,12 +36,14 @@ No installation requirement
     ├── Input                   # the input file for the program
     │   ├── testInput           # txt file for input
     ├── src                     # Source files
-    │   ├── bundleCalculator            # the bundle calcution
-    │   ├── calculationInitializer      # the initializer for the calcuation
-    │   ├── formatBundle                # the format detail
-    │   ├── formatBundleList            # the format list
+    │   ├── BundleCalculator            # the bundle calcution
+    │   ├── CalculationInitializer      # the initializer for the calcuation
+    │   ├── FormatBundle                # the format detail
+    │   ├── FormatBundleList            # the format list
     │   ├── Launcher                    # the main program
+    │   ├── Order                       # the input
+    │   ├── OrderDetail                 # the output        
     └── README.md
 
 # Usage
-directly run the main program in the bundleCalculator file in source directory
+directly run the main program in source directory
