@@ -42,7 +42,9 @@ No installation requirement
     │   ├── FormatBundleList            # the format list
     │   ├── Launcher                    # the main program
     │   ├── Order                       # the input
-    │   ├── OrderDetail                 # the output        
+    │   ├── OrderDetail                 # the output      
+    ├── test                     # test files      
+    │   ├── FormatBundleTest            # the bundle formate test    
     └── README.md
 
 # Usage
