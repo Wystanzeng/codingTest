@@ -2,7 +2,6 @@
  * the order
  */
 public class Order {
-
     // format for the order
     private String format;
     // quantity for the order

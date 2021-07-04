@@ -6,13 +6,10 @@ import java.io.IOException;
  * the calculation initializer
  */
 public class CalculationInitializer {
-
     // file path
     private String filePath;
-
     // format bundle list for the company
     private FormatBundleList formatBundleList;
-
     // bundle calculator
     private BundleCalculator bundleCalculator;
 
@@ -37,10 +34,9 @@ public class CalculationInitializer {
             FormatBundle formatBundle =
                     formatBundleList.getFormatBundleList().get(format);
             // creat the order
-            Order order = new Order(format, quantity);
-            // creat the orderDetail
             OrderDetail
-                    orderDetail = new OrderDetail(order, formatBundle);
+                    orderDetail = new OrderDetail(format, quantity,
+                    formatBundle);
             bundleCalculator.priceCalculator(orderDetail);
         }
     }

@@ -5,7 +5,6 @@ import java.util.Map;
  * the format list
  */
 public class FormatBundleList {
-
     // map to store the bundles list
     private Map<String, FormatBundle> formatBundleList;
 

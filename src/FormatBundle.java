@@ -4,13 +4,10 @@ import java.util.TreeMap;
  * the bundles for the format
  */
 public class FormatBundle {
-
     // format of submission
     private String format;
-
     // code for the format
     private String code;
-
     // map to store the bundle
     private TreeMap<Integer, Double> bundles;
 
