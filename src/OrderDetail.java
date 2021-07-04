@@ -49,7 +49,7 @@ public class OrderDetail extends Order{
      * bundleNum x bundle BundlePrice
      * ...
      *
-     * @return
+     * @return  string represents the order
      */
     @Override
     public String toString() {
