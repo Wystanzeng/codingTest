@@ -4,9 +4,7 @@ import java.util.TreeSet;
 /**
  * the order for the given format
  */
-public class OrderDetail {
-    // the order
-    private Order order;
+public class OrderDetail extends Order{
     // format for the order
     private Double totalPrice;
     // the bundle price for the given format
@@ -14,8 +12,9 @@ public class OrderDetail {
     // the order detail
     private HashMap<Integer, Integer> orderDetail;
 
-    public OrderDetail(Order order, FormatBundle formatBundle) {
-        this.order = order;
+    public OrderDetail(String format, Integer quantity,
+                       FormatBundle formatBundle) {
+        super(format, quantity);
         this.formatBundle = formatBundle;
         totalPrice = 0.0;
         orderDetail = new HashMap<>();
@@ -43,15 +42,6 @@ public class OrderDetail {
     }
 
     /**
-     * order quantity
-     *
-     * @return Integer the given quantity for the order
-     */
-    public Integer getQuantity() {
-        return order.getQuantity();
-    }
-
-    /**
      * string represent the order
      *
      * format:
@@ -64,8 +54,8 @@ public class OrderDetail {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append(String.format("%s %s %.2f", order.getQuantity(),
-                order.getFormat(),
+        sb.append(String.format("%s %s %.2f", super.getQuantity(),
+                super.getFormat(),
                 totalPrice));
         for (Integer bundle: new TreeSet<>(orderDetail.keySet()).descendingSet()) {
             sb.append(System.lineSeparator() + orderDetail.get(bundle) + " x " + bundle + " "

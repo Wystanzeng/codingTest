@@ -1,3 +1,6 @@
+/**
+ * the order
+ */
 public class Order {
 
     // format for the order
